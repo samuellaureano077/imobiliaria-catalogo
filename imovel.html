@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Detalhes do imóvel | Morada Nova Imóveis</title>
+  <meta name="description" content="Fotos, valores, características e simulação de financiamento do imóvel. Fale com um corretor da Morada Nova Imóveis pelo WhatsApp.">
+  <meta name="theme-color" content="#0f2a44">
+
+  <!-- Open Graph (o JavaScript atualiza título, descrição e imagem com os dados do imóvel) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Morada Nova Imóveis">
+  <meta property="og:title" content="Detalhes do imóvel | Morada Nova Imóveis">
+  <meta property="og:description" content="Fotos, valores e características do imóvel, com atendimento pelo WhatsApp.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1748063578185-3d68121b11ff?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%230f2a44'/%3E%3Cpath d='M9 19.5 20 10l11 9.5V30a1.5 1.5 0 0 1-1.5 1.5h-19A1.5 1.5 0 0 1 9 30z' fill='%23f6f3ef'/%3E%3Crect x='17' y='21.5' width='6' height='10' rx='1' fill='%23b5541f'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/data.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/imovel.js" defer></script>
+</head>
+<body>
+  <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ============ Cabeçalho ============ -->
+  <header class="cabecalho">
+    <div class="container cabecalho__interno">
+      <a class="marca" href="index.html">
+        <svg class="marca__simbolo" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <rect class="marca__fundo" width="40" height="40" rx="10"/>
+          <path class="marca__casa" d="M9 19.5 20 10l11 9.5V30a1.5 1.5 0 0 1-1.5 1.5h-19A1.5 1.5 0 0 1 9 30z"/>
+          <rect class="marca__porta" x="17" y="21.5" width="6" height="10" rx="1"/>
+        </svg>
+        <span class="marca__texto">
+          <span class="marca__nome">Morada Nova</span>
+          <span class="marca__sufixo">Imóveis</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a href="index.html?finalidade=venda#resultados">Comprar</a></li>
+          <li><a href="index.html?finalidade=aluguel#resultados">Alugar</a></li>
+          <li><a href="index.html#sobre">Sobre nós</a></li>
+          <li><a href="index.html#anuncie">Anuncie seu imóvel</a></li>
+          <li class="nav__whatsapp">
+            <a data-whatsapp="Olá! Vim pelo site da Morada Nova e gostaria de falar com um corretor." href="https://wa.me/5511900000000" target="_blank" rel="noopener">Fale conosco pelo WhatsApp<span class="sr-only"> (abre em nova aba)</span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="cabecalho__acoes">
+        <a class="cabecalho__favoritos" href="index.html?favoritos=1#resultados">
+          <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20.3s-7.4-4.5-9.2-9.3C1.6 7.8 3.6 4.5 7 4.5c2.1 0 3.6 1.2 5 3.1 1.4-1.9 2.9-3.1 5-3.1 3.4 0 5.4 3.3 4.2 6.5-1.8 4.8-9.2 9.3-9.2 9.3z"/></svg>
+          <span class="cabecalho__favoritos-texto">Favoritos</span>
+          <span class="contador" data-contador-favoritos hidden>0</span>
+        </a>
+        <a class="botao botao--acento botao--p cabecalho__cta" id="cabecalho-cta" data-whatsapp="Olá! Vim pelo site da Morada Nova e gostaria de falar com um corretor." href="https://wa.me/5511900000000" target="_blank" rel="noopener">
+          Fale conosco<span class="sr-only"> pelo WhatsApp (abre em nova aba)</span>
+        </a>
+        <button type="button" class="cabecalho__menu" aria-expanded="false" aria-controls="menu-principal">
+          <svg class="icone icone--abrir" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icone icone--fechar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          <span class="sr-only">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" class="pagina-imovel">
+    <div class="container" id="container-imovel">
+      <nav class="trilha" aria-label="Você está em">
+        <ol>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#resultados" id="trilha-busca">Todos os imóveis</a></li>
+          <li><span id="trilha-atual" aria-current="page">Detalhes do imóvel</span></li>
+        </ol>
+      </nav>
+
+      <noscript>
+        <p class="aviso-noscript">Ative o JavaScript do navegador para ver os detalhes deste imóvel.</p>
+      </noscript>
+
+      <!-- O JavaScript preenche este bloco com os dados de js/data.js -->
+      <article class="imovel" id="imovel" aria-labelledby="imovel-titulo" hidden>
+        <header class="imovel__topo">
+          <div class="imovel__identificacao">
+            <div class="selos" id="imovel-selos"></div>
+            <h1 class="imovel__titulo" id="imovel-titulo">Imóvel</h1>
+            <p class="imovel__local">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 0 1 13 0c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+              <span id="imovel-local"></span>
+            </p>
+            <div class="imovel__acoes">
+              <button type="button" class="botao botao--contorno botao--p botao-favoritar" data-favoritar>
+                <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20.3s-7.4-4.5-9.2-9.3C1.6 7.8 3.6 4.5 7 4.5c2.1 0 3.6 1.2 5 3.1 1.4-1.9 2.9-3.1 5-3.1 3.4 0 5.4 3.3 4.2 6.5-1.8 4.8-9.2 9.3-9.2 9.3z"/></svg>
+                Favoritar
+              </button>
+              <button type="button" class="botao botao--contorno botao--p" data-compartilhar>
+                <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="18" cy="5.5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/><path d="m8.2 13.2 7.6 4.1M15.8 6.7l-7.6 4.1"/></svg>
+                Compartilhar
+              </button>
+            </div>
+          </div>
+          <div class="imovel__preco">
+            <p class="imovel__preco-rotulo" id="imovel-preco-rotulo">Valor</p>
+            <p class="imovel__preco-valor" id="imovel-preco"></p>
+            <dl class="imovel__custos" id="imovel-custos"></dl>
+          </div>
+        </header>
+
+        <!-- Galeria: clique nas miniaturas ou use as setas do teclado -->
+        <section class="galeria" id="galeria" aria-label="Galeria de fotos">
+          <div class="galeria__palco">
+            <img class="galeria__foto" id="galeria-foto" alt="" width="1200" height="800">
+            <button type="button" class="galeria__seta galeria__seta--anterior" id="galeria-anterior">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>
+              <span class="sr-only">Foto anterior</span>
+            </button>
+            <button type="button" class="galeria__seta galeria__seta--proxima" id="galeria-proxima">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
+              <span class="sr-only">Próxima foto</span>
+            </button>
+            <p class="galeria__contador" id="galeria-contador" aria-hidden="true">1 / 1</p>
+            <p class="sr-only" id="galeria-anuncio" aria-live="polite"></p>
+          </div>
+          <ul class="galeria__miniaturas" id="galeria-miniaturas" aria-label="Miniaturas das fotos"></ul>
+          <p class="galeria__dica">Dica: use as setas ← → do teclado para passar as fotos.</p>
+        </section>
+
+        <div class="imovel__layout">
+          <div class="imovel__conteudo">
+            <section class="painel" aria-labelledby="titulo-fatos">
+              <h2 class="painel__titulo" id="titulo-fatos">Principais informações</h2>
+              <ul class="fatos" id="imovel-fatos"></ul>
+              <p class="imovel__publicado" id="imovel-publicado"></p>
+            </section>
+
+            <section class="painel" aria-labelledby="titulo-descricao">
+              <h2 class="painel__titulo" id="titulo-descricao">Sobre o imóvel</h2>
+              <p class="imovel__descricao" id="imovel-descricao"></p>
+            </section>
+
+            <section class="painel" aria-labelledby="titulo-caracteristicas">
+              <h2 class="painel__titulo" id="titulo-caracteristicas">Características</h2>
+              <ul class="caracteristicas" id="imovel-caracteristicas"></ul>
+            </section>
+
+            <!-- Simulador: só aparece em imóveis à venda -->
+            <section class="painel simulador" id="simulador" aria-labelledby="titulo-simulador" hidden>
+              <h2 class="painel__titulo" id="titulo-simulador">Simule o financiamento</h2>
+              <p class="painel__intro">Estimativa da parcela pela tabela Price para um imóvel de <strong id="sim-valor">—</strong>. Ajuste os valores como quiser.</p>
+
+              <form class="simulador__form" id="form-simulador" novalidate>
+                <div class="simulador__campos">
+                  <div class="campo">
+                    <label for="sim-entrada">Entrada<span class="sr-only"> em reais</span></label>
+                    <div class="campo-moeda">
+                      <span aria-hidden="true">R$</span>
+                      <input id="sim-entrada" name="entrada" type="text" inputmode="numeric" autocomplete="off" aria-describedby="sim-entrada-dica sim-entrada-erro">
+                    </div>
+                    <p class="campo-dica" id="sim-entrada-dica">20% do valor do imóvel</p>
+                    <p class="campo-erro" id="sim-entrada-erro" hidden></p>
+                  </div>
+                  <div class="campo">
+                    <label for="sim-prazo">Prazo (anos)</label>
+                    <input id="sim-prazo" name="prazo" type="number" min="1" max="35" step="1" value="30" inputmode="numeric" aria-describedby="sim-prazo-dica sim-prazo-erro">
+                    <p class="campo-dica" id="sim-prazo-dica">De 1 a 35 anos</p>
+                    <p class="campo-erro" id="sim-prazo-erro" hidden></p>
+                  </div>
+                  <div class="campo">
+                    <label for="sim-taxa">Juros ao ano (%)</label>
+                    <input id="sim-taxa" name="taxa" type="text" inputmode="decimal" autocomplete="off" value="10,5" aria-describedby="sim-taxa-dica sim-taxa-erro">
+                    <p class="campo-dica" id="sim-taxa-dica">Taxa efetiva anual</p>
+                    <p class="campo-erro" id="sim-taxa-erro" hidden></p>
+                  </div>
+                </div>
+                <button type="submit" class="botao botao--primario">Calcular parcela</button>
+              </form>
+
+              <div class="simulador__resultado" id="sim-resultado">
+                <p class="simulador__parcela">
+                  <span>Parcela mensal estimada</span>
+                  <strong id="sim-parcela">—</strong>
+                </p>
+                <dl class="simulador__resumo">
+                  <div><dt>Valor financiado</dt><dd id="sim-financiado">—</dd></div>
+                  <div><dt>Número de parcelas</dt><dd id="sim-meses">—</dd></div>
+                  <div><dt>Total pago nas parcelas</dt><dd id="sim-total">—</dd></div>
+                  <div><dt>Total de juros</dt><dd id="sim-juros">—</dd></div>
+                  <div class="simulador__resumo-destaque"><dt>Custo total (entrada + parcelas)</dt><dd id="sim-custo">—</dd></div>
+                </dl>
+              </div>
+              <p class="sr-only" id="sim-anuncio" aria-live="polite"></p>
+              <p class="simulador__aviso">Valores aproximados, apenas para referência. Não incluem seguros obrigatórios, taxas do banco nem correção monetária. As condições reais dependem da análise de crédito de cada instituição.</p>
+            </section>
+          </div>
+
+          <!-- Card de contato (fica fixo ao lado no computador) -->
+          <aside class="imovel__lateral" aria-labelledby="titulo-contato">
+            <div class="contato">
+              <div class="contato__cabecalho">
+                <span class="contato__avatar" aria-hidden="true">MN</span>
+                <div>
+                  <h2 class="contato__titulo" id="titulo-contato">Gostou deste imóvel?</h2>
+                  <p class="contato__subtitulo">Fale com um corretor e agende sua visita.</p>
+                </div>
+              </div>
+
+              <form class="contato__form" id="form-contato" novalidate>
+                <div class="campo">
+                  <label for="contato-nome">Seu nome</label>
+                  <input id="contato-nome" name="nome" type="text" autocomplete="name" required aria-describedby="contato-nome-erro">
+                  <p class="campo-erro" id="contato-nome-erro" hidden></p>
+                </div>
+                <div class="campo">
+                  <label for="contato-telefone">Telefone com DDD</label>
+                  <input id="contato-telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel-national" placeholder="(11) 98765-4321" required aria-describedby="contato-telefone-erro">
+                  <p class="campo-erro" id="contato-telefone-erro" hidden></p>
+                </div>
+                <div class="campo">
+                  <label for="contato-mensagem">Mensagem</label>
+                  <textarea id="contato-mensagem" name="mensagem" rows="5" required aria-describedby="contato-mensagem-erro"></textarea>
+                  <p class="campo-erro" id="contato-mensagem-erro" hidden></p>
+                </div>
+                <button type="submit" class="botao botao--whatsapp botao--bloco">
+                  <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.6l-4.6 1.4 1.4-4.4A8.5 8.5 0 1 1 20.5 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg>
+                  Enviar pelo WhatsApp<span class="sr-only"> (abre em nova aba)</span>
+                </button>
+                <p class="contato__nota">O WhatsApp abre com a mensagem pronta. Nada é enviado sem a sua confirmação.</p>
+              </form>
+
+              <div class="contato__acoes">
+                <button type="button" class="botao botao--contorno botao-favoritar" data-favoritar>
+                  <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20.3s-7.4-4.5-9.2-9.3C1.6 7.8 3.6 4.5 7 4.5c2.1 0 3.6 1.2 5 3.1 1.4-1.9 2.9-3.1 5-3.1 3.4 0 5.4 3.3 4.2 6.5-1.8 4.8-9.2 9.3-9.2 9.3z"/></svg>
+                  Favoritar
+                </button>
+                <button type="button" class="botao botao--contorno" data-compartilhar>
+                  <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="18" cy="5.5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="18.5" r="2.5"/><path d="m8.2 13.2 7.6 4.1M15.8 6.7l-7.6 4.1"/></svg>
+                  Compartilhar
+                </button>
+              </div>
+              <p class="contato__rodape"><span data-config="nome">Morada Nova Imóveis</span> · <span data-config="creci">CRECI 00000-J</span></p>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- Imóveis semelhantes (mesmo tipo ou mesma cidade) -->
+      <section class="semelhantes" id="semelhantes" aria-labelledby="titulo-semelhantes" hidden>
+        <div class="secao__cabecalho">
+          <p class="sobretitulo">Continue procurando</p>
+          <h2 class="secao__titulo" id="titulo-semelhantes">Imóveis semelhantes</h2>
+        </div>
+        <ul class="grade-imoveis grade-imoveis--tres" id="lista-semelhantes"></ul>
+      </section>
+    </div>
+  </main>
+
+  <!-- ============ Rodapé ============ -->
+  <footer class="rodape">
+    <div class="container rodape__grade">
+      <div class="rodape__marca">
+        <a class="marca marca--clara" href="index.html">
+          <svg class="marca__simbolo" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <rect class="marca__fundo" width="40" height="40" rx="10"/>
+            <path class="marca__casa" d="M9 19.5 20 10l11 9.5V30a1.5 1.5 0 0 1-1.5 1.5h-19A1.5 1.5 0 0 1 9 30z"/>
+            <rect class="marca__porta" x="17" y="21.5" width="6" height="10" rx="1"/>
+          </svg>
+          <span class="marca__texto">
+            <span class="marca__nome">Morada Nova</span>
+            <span class="marca__sufixo">Imóveis</span>
+          </span>
+        </a>
+        <p>Imóveis selecionados em Campinas, Sorocaba e Jundiaí, com atendimento próximo e documentação conferida.</p>
+      </div>
+
+      <div>
+        <h2 class="rodape__titulo">Atendimento</h2>
+        <ul class="rodape__lista">
+          <li>
+            <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 0 1 13 0c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            <span data-config="endereco">Rua dos Ipês Amarelos, 845 · Vila Serena, Campinas/SP</span>
+          </li>
+          <li>
+            <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3.5h2.6l1.6 4.2-2 1.3a11 11 0 0 0 6.2 6.2l1.3-2 4.2 1.6v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></svg>
+            <a href="tel:+5511900000000" data-telefone data-config="telefone">(11) 90000-0000</a>
+          </li>
+          <li>
+            <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+            <span data-config="horario">Seg. a sex., das 9h às 18h · Sáb., das 9h às 13h</span>
+          </li>
+        </ul>
+      </div>
+
+      <nav aria-label="Rodapé">
+        <h2 class="rodape__titulo">Navegue</h2>
+        <ul class="rodape__lista">
+          <li><a href="index.html?finalidade=venda#resultados">Imóveis à venda</a></li>
+          <li><a href="index.html?finalidade=aluguel#resultados">Imóveis para alugar</a></li>
+          <li><a href="index.html?favoritos=1#resultados">Meus favoritos</a></li>
+          <li><a href="index.html#anuncie">Anuncie seu imóvel</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container rodape__base">
+      <p>© <span data-ano>2026</span> <span data-config="nome">Morada Nova Imóveis</span> · <span data-config="creci">CRECI 00000-J</span></p>
+      <p>Projeto fictício para portfólio. Fotos meramente ilustrativas.</p>
+    </div>
+  </footer>
+
+  <div class="aviso" id="aviso" role="status"></div>
+</body>
+</html>

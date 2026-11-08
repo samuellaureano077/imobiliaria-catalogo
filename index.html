@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Morada Nova Imóveis | Casas e apartamentos para comprar e alugar</title>
+  <meta name="description" content="Casas, apartamentos, terrenos e salas comerciais à venda e para alugar em Campinas, Sorocaba e Jundiaí. Filtre por preço, quartos e cidade e fale com um corretor pelo WhatsApp.">
+  <meta name="theme-color" content="#0f2a44">
+
+  <!-- Open Graph (pré-visualização ao compartilhar o link) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Morada Nova Imóveis">
+  <meta property="og:title" content="Morada Nova Imóveis | Casas e apartamentos para comprar e alugar">
+  <meta property="og:description" content="Imóveis selecionados em Campinas, Sorocaba e Jundiaí, com atendimento próximo e documentação conferida.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1748063578185-3d68121b11ff?auto=format&fit=crop&w=1200&h=630&q=80">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%230f2a44'/%3E%3Cpath d='M9 19.5 20 10l11 9.5V30a1.5 1.5 0 0 1-1.5 1.5h-19A1.5 1.5 0 0 1 9 30z' fill='%23f6f3ef'/%3E%3Crect x='17' y='21.5' width='6' height='10' rx='1' fill='%23b5541f'/%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/data.js" defer></script>
+  <script src="js/utils.js" defer></script>
+  <script src="js/catalogo.js" defer></script>
+</head>
+<body>
+  <a class="pular-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ============ Cabeçalho ============ -->
+  <header class="cabecalho">
+    <div class="container cabecalho__interno">
+      <a class="marca" href="index.html">
+        <svg class="marca__simbolo" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+          <rect class="marca__fundo" width="40" height="40" rx="10"/>
+          <path class="marca__casa" d="M9 19.5 20 10l11 9.5V30a1.5 1.5 0 0 1-1.5 1.5h-19A1.5 1.5 0 0 1 9 30z"/>
+          <rect class="marca__porta" x="17" y="21.5" width="6" height="10" rx="1"/>
+        </svg>
+        <span class="marca__texto">
+          <span class="marca__nome">Morada Nova</span>
+          <span class="marca__sufixo">Imóveis</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="menu-principal" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a href="index.html?finalidade=venda#resultados">Comprar</a></li>
+          <li><a href="index.html?finalidade=aluguel#resultados">Alugar</a></li>
+          <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="#anuncie">Anuncie seu imóvel</a></li>
+          <li class="nav__whatsapp">
+            <a data-whatsapp="Olá! Vim pelo site da Morada Nova e gostaria de falar com um corretor." href="https://wa.me/5511900000000" target="_blank" rel="noopener">Fale conosco pelo WhatsApp<span class="sr-only"> (abre em nova aba)</span></a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="cabecalho__acoes">
+        <a class="cabecalho__favoritos" href="index.html?favoritos=1#resultados">
+          <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20.3s-7.4-4.5-9.2-9.3C1.6 7.8 3.6 4.5 7 4.5c2.1 0 3.6 1.2 5 3.1 1.4-1.9 2.9-3.1 5-3.1 3.4 0 5.4 3.3 4.2 6.5-1.8 4.8-9.2 9.3-9.2 9.3z"/></svg>
+          <span class="cabecalho__favoritos-texto">Favoritos</span>
+          <span class="contador" data-contador-favoritos hidden>0</span>
+        </a>
+        <a class="botao botao--acento botao--p cabecalho__cta" data-whatsapp="Olá! Vim pelo site da Morada Nova e gostaria de falar com um corretor." href="https://wa.me/5511900000000" target="_blank" rel="noopener">
+          Fale conosco<span class="sr-only"> pelo WhatsApp (abre em nova aba)</span>
+        </a>
+        <button type="button" class="cabecalho__menu" aria-expanded="false" aria-controls="menu-principal">
+          <svg class="icone icone--abrir" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <svg class="icone icone--fechar" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          <span class="sr-only">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <!-- ============ Hero + busca rápida ============ -->
+    <section class="hero" aria-labelledby="titulo-hero">
+      <img class="hero__imagem" src="https://images.unsplash.com/photo-1748063578185-3d68121b11ff?auto=format&fit=crop&w=1920&h=1080&q=80"
+        srcset="https://images.unsplash.com/photo-1748063578185-3d68121b11ff?auto=format&fit=crop&w=960&h=1080&q=80 960w, https://images.unsplash.com/photo-1748063578185-3d68121b11ff?auto=format&fit=crop&w=1920&h=1080&q=80 1920w"
+        sizes="100vw" alt="" width="1920" height="1080" fetchpriority="high">
+      <div class="container hero__conteudo">
+        <p class="sobretitulo sobretitulo--claro">Imobiliária em Campinas, Sorocaba e Jundiaí</p>
+        <h1 class="hero__titulo" id="titulo-hero">O endereço certo para o seu <em>próximo capítulo</em>.</h1>
+        <p class="hero__texto">Casas, apartamentos, terrenos e salas comerciais escolhidos a dedo por quem conhece cada bairro. Compre ou alugue com segurança, do primeiro contato à entrega das chaves.</p>
+
+        <form class="busca-rapida" id="busca-rapida" role="search" aria-label="Busca rápida de imóveis">
+          <fieldset class="abas">
+            <legend class="sr-only">O que você procura?</legend>
+            <input class="sr-only" type="radio" name="br-finalidade" id="br-comprar" value="venda" checked>
+            <label for="br-comprar">Comprar</label>
+            <input class="sr-only" type="radio" name="br-finalidade" id="br-alugar" value="aluguel">
+            <label for="br-alugar">Alugar</label>
+          </fieldset>
+          <div class="busca-rapida__campos">
+            <div class="campo">
+              <label for="br-cidade">Cidade</label>
+              <div class="seletor">
+                <select id="br-cidade" name="br-cidade">
+                  <option value="">Todas as cidades</option>
+                </select>
+              </div>
+            </div>
+            <div class="campo">
+              <label for="br-tipo">Tipo de imóvel</label>
+              <div class="seletor">
+                <select id="br-tipo" name="br-tipo">
+                  <option value="">Todos os tipos</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="botao botao--acento busca-rapida__botao">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg>
+              Buscar imóveis
+            </button>
+          </div>
+        </form>
+
+        <ul class="hero__numeros">
+          <li><strong data-total-imoveis>14</strong> imóveis disponíveis</li>
+          <li><strong data-total-cidades>3</strong> cidades atendidas</li>
+          <li><strong>+1.800</strong> negócios fechados</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Destaques ============ -->
+    <section class="secao secao--destaques" id="destaques" aria-labelledby="titulo-destaques">
+      <div class="container">
+        <div class="secao__cabecalho secao__cabecalho--linha">
+          <div>
+            <p class="sobretitulo">Seleção da equipe</p>
+            <h2 class="secao__titulo" id="titulo-destaques">Imóveis em destaque</h2>
+          </div>
+          <div class="carrossel__controles">
+            <button type="button" class="botao-icone" id="destaques-anterior" aria-controls="lista-destaques">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m15 18-6-6 6-6"/></svg>
+              <span class="sr-only">Destaques anteriores</span>
+            </button>
+            <button type="button" class="botao-icone" id="destaques-proximo" aria-controls="lista-destaques">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m9 18 6-6-6-6"/></svg>
+              <span class="sr-only">Próximos destaques</span>
+            </button>
+          </div>
+        </div>
+        <ul class="carrossel" id="lista-destaques"></ul>
+      </div>
+    </section>
+
+    <!-- ============ Catálogo: filtros + resultados ============ -->
+    <section class="secao secao--catalogo" id="resultados" aria-labelledby="titulo-resultados">
+      <div class="container">
+        <div class="secao__cabecalho">
+          <p class="sobretitulo">Catálogo completo</p>
+          <h2 class="secao__titulo" id="titulo-resultados" tabindex="-1">Imóveis disponíveis</h2>
+        </div>
+
+        <div class="catalogo">
+          <div class="barra-resultados">
+            <p class="barra-resultados__contagem" id="contagem" aria-live="polite" aria-atomic="true">Carregando imóveis…</p>
+            <button type="button" class="botao botao--contorno barra-resultados__filtros" id="abrir-filtros" aria-expanded="false" aria-controls="filtros">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h9M17 6h3M4 12h3M11 12h9M4 18h11M19 18h1"/><circle cx="15" cy="6" r="2"/><circle cx="9" cy="12" r="2"/><circle cx="17" cy="18" r="2"/></svg>
+              Filtros
+              <span class="contador" id="contador-filtros" hidden></span>
+            </button>
+            <div class="ordenar">
+              <label for="ordem">Ordenar por</label>
+              <div class="seletor">
+                <select id="ordem" name="ordem">
+                  <option value="recentes">Mais recentes</option>
+                  <option value="menor-preco">Menor preço</option>
+                  <option value="maior-preco">Maior preço</option>
+                  <option value="maior-area">Maior área</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <form class="filtros" id="filtros" aria-labelledby="titulo-filtros" novalidate>
+            <div class="filtros__topo">
+              <h3 class="filtros__titulo" id="titulo-filtros">Filtrar imóveis</h3>
+              <button type="button" class="botao-link" data-limpar-filtros>Limpar filtros</button>
+            </div>
+
+            <fieldset class="grupo">
+              <legend>Finalidade</legend>
+              <div class="segmentado">
+                <input class="sr-only" type="radio" name="finalidade" id="f-todas" value="" checked>
+                <label for="f-todas">Todas</label>
+                <input class="sr-only" type="radio" name="finalidade" id="f-venda" value="venda">
+                <label for="f-venda">Comprar</label>
+                <input class="sr-only" type="radio" name="finalidade" id="f-aluguel" value="aluguel">
+                <label for="f-aluguel">Alugar</label>
+              </div>
+            </fieldset>
+
+            <div class="campo">
+              <label for="f-tipo">Tipo de imóvel</label>
+              <div class="seletor">
+                <select id="f-tipo" name="tipo">
+                  <option value="">Todos os tipos</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="campo">
+              <label for="f-cidade">Cidade</label>
+              <div class="seletor">
+                <select id="f-cidade" name="cidade">
+                  <option value="">Todas as cidades</option>
+                </select>
+              </div>
+            </div>
+
+            <fieldset class="grupo">
+              <legend>Faixa de preço</legend>
+              <div class="faixa">
+                <div class="campo">
+                  <label for="f-min">Mínimo<span class="sr-only"> em reais</span></label>
+                  <div class="campo-moeda">
+                    <span aria-hidden="true">R$</span>
+                    <input id="f-min" name="min" type="text" inputmode="numeric" autocomplete="off" placeholder="0" aria-describedby="dica-preco erro-preco">
+                  </div>
+                </div>
+                <div class="campo">
+                  <label for="f-max">Máximo<span class="sr-only"> em reais</span></label>
+                  <div class="campo-moeda">
+                    <span aria-hidden="true">R$</span>
+                    <input id="f-max" name="max" type="text" inputmode="numeric" autocomplete="off" placeholder="Sem limite" aria-describedby="dica-preco erro-preco">
+                  </div>
+                </div>
+              </div>
+              <p class="campo-dica" id="dica-preco">No aluguel, considere o valor mensal.</p>
+              <p class="campo-erro" id="erro-preco" hidden>O preço mínimo está maior que o máximo.</p>
+            </fieldset>
+
+            <fieldset class="grupo">
+              <legend>Quartos</legend>
+              <div class="chips">
+                <input class="sr-only" type="radio" name="quartos" id="q-0" value="0" checked>
+                <label for="q-0">Qualquer</label>
+                <input class="sr-only" type="radio" name="quartos" id="q-1" value="1">
+                <label for="q-1">1+</label>
+                <input class="sr-only" type="radio" name="quartos" id="q-2" value="2">
+                <label for="q-2">2+</label>
+                <input class="sr-only" type="radio" name="quartos" id="q-3" value="3">
+                <label for="q-3">3+</label>
+                <input class="sr-only" type="radio" name="quartos" id="q-4" value="4">
+                <label for="q-4">4+</label>
+              </div>
+            </fieldset>
+
+            <div class="campo-switch">
+              <div>
+                <label for="f-favoritos">Só favoritos</label>
+                <p class="campo-dica" id="dica-favoritos">Mostra apenas os imóveis que você salvou</p>
+              </div>
+              <input class="switch" type="checkbox" role="switch" id="f-favoritos" name="favoritos" aria-describedby="dica-favoritos">
+            </div>
+
+            <button type="button" class="botao botao--primario botao--bloco filtros__ver" id="ver-resultados">Ver resultados</button>
+          </form>
+
+          <div class="catalogo__resultados">
+            <ul class="filtros-ativos" id="filtros-ativos" aria-label="Filtros aplicados" hidden></ul>
+            <ul class="grade-imoveis" id="lista-imoveis"></ul>
+
+            <div class="estado-vazio" id="estado-vazio" hidden>
+              <svg class="ilustracao" viewBox="0 0 160 120" aria-hidden="true" focusable="false">
+                <ellipse class="ilustracao__sombra" cx="80" cy="110" rx="62" ry="6"/>
+                <path class="ilustracao__parede" d="M30 62 70 30l40 32v44H30z"/>
+                <path class="ilustracao__traco" d="M22 66 70 26l48 40M30 62v44h80V62"/>
+                <rect class="ilustracao__porta" x="60" y="76" width="20" height="30" rx="2"/>
+                <circle class="ilustracao__lupa" cx="116" cy="72" r="17"/>
+                <path class="ilustracao__cabo" d="m128.5 84.5 14 14"/>
+              </svg>
+              <h3 class="estado-vazio__titulo" id="vazio-titulo">Nenhum imóvel com esses filtros</h3>
+              <p class="estado-vazio__texto" id="vazio-texto">Tente ampliar a faixa de preço, escolher outra cidade ou remover alguns filtros para ver mais opções.</p>
+              <button type="button" class="botao botao--primario" data-limpar-filtros>Limpar filtros</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Sobre ============ -->
+    <section class="secao secao--sobre" id="sobre" aria-labelledby="titulo-sobre">
+      <div class="container sobre">
+        <div class="sobre__midia">
+          <img src="https://images.unsplash.com/photo-1656646424687-b303e1758b36?auto=format&fit=crop&w=900&h=1000&q=80" alt="Escritório da Morada Nova Imóveis" width="900" height="1000" loading="lazy" decoding="async">
+          <p class="sobre__selo"><strong>Desde 2009</strong> no mercado imobiliário</p>
+        </div>
+        <div class="sobre__texto">
+          <p class="sobretitulo">Sobre a imobiliária</p>
+          <h2 class="secao__titulo" id="titulo-sobre">Mais de quinze anos aproximando pessoas e endereços</h2>
+          <p>A Morada Nova nasceu em Campinas com uma ideia simples: tratar cada negociação como se fosse a compra da nossa própria casa. Hoje atendemos também Sorocaba e Jundiaí, sempre com corretores que moram nas regiões em que trabalham.</p>
+          <p>Da primeira visita à entrega das chaves, você fala com a mesma pessoa, recebe respostas claras e sabe exatamente em que etapa está.</p>
+
+          <ul class="valores">
+            <li class="valor">
+              <span class="valor__icone">
+                <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.5 11 12 4l8.5 7"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-5.5h4V20"/></svg>
+              </span>
+              <div>
+                <h3 class="valor__titulo">Avaliação honesta</h3>
+                <p>Preço definido com base em negócios reais da vizinhança, não em achismo.</p>
+              </div>
+            </li>
+            <li class="valor">
+              <span class="valor__icone">
+                <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>
+              </span>
+              <div>
+                <h3 class="valor__titulo">Documentação conferida</h3>
+                <p>Matrícula, certidões e contrato revisados antes de qualquer assinatura.</p>
+              </div>
+            </li>
+            <li class="valor">
+              <span class="valor__icone">
+                <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/><path d="M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6"/></svg>
+              </span>
+              <div>
+                <h3 class="valor__titulo">Atendimento próximo</h3>
+                <p>Um corretor dedicado acompanha você do primeiro contato até a mudança.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Anuncie ============ -->
+    <section class="secao secao--anuncie" id="anuncie" aria-labelledby="titulo-anuncie">
+      <div class="container">
+        <div class="anuncie">
+          <div class="anuncie__texto">
+            <p class="sobretitulo sobretitulo--claro">Para proprietários</p>
+            <h2 class="anuncie__titulo" id="titulo-anuncie">Quer vender ou alugar o seu imóvel?</h2>
+            <p>Cuidamos da avaliação, das fotos, da divulgação e das visitas. Você só precisa escolher a melhor proposta.</p>
+            <ul class="anuncie__lista">
+              <li><svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Avaliação gratuita em até 48 horas</li>
+              <li><svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Fotos profissionais e anúncio nos principais portais</li>
+              <li><svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>Contrato, vistoria e documentação por nossa conta</li>
+            </ul>
+          </div>
+          <div class="anuncie__acao">
+            <a class="botao botao--acento botao--g" data-whatsapp="Olá! Gostaria de anunciar meu imóvel com a Morada Nova Imóveis. Pode me ajudar?" href="https://wa.me/5511900000000" target="_blank" rel="noopener">
+              <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.5 11.5a8.5 8.5 0 0 1-12.4 7.6l-4.6 1.4 1.4-4.4A8.5 8.5 0 1 1 20.5 11.5z"/><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"/></svg>
+              Anunciar pelo WhatsApp<span class="sr-only"> (abre em nova aba)</span>
+            </a>
+            <p class="anuncie__nota">Respondemos em horário comercial · <span data-config="telefone">(11) 90000-0000</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Rodapé ============ -->
+  <footer class="rodape">
+    <div class="container rodape__grade">
+      <div class="rodape__marca">
+        <a class="marca marca--clara" href="index.html">
+          <svg class="marca__simbolo" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+            <rect class="marca__fundo" width="40" height="40" rx="10"/>
+            <path class="marca__casa" d="M9 19.5 20 10l11 9.5V30a1.5 1.5 0 0 1-1.5 1.5h-19A1.5 1.5 0 0 1 9 30z"/>
+            <rect class="marca__porta" x="17" y="21.5" width="6" height="10" rx="1"/>
+          </svg>
+          <span class="marca__texto">
+            <span class="marca__nome">Morada Nova</span>
+            <span class="marca__sufixo">Imóveis</span>
+          </span>
+        </a>
+        <p>Imóveis selecionados em Campinas, Sorocaba e Jundiaí, com atendimento próximo e documentação conferida.</p>
+      </div>
+
+      <div>
+        <h2 class="rodape__titulo">Atendimento</h2>
+        <ul class="rodape__lista">
+          <li>
+            <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s-6.5-5.8-6.5-11a6.5 6.5 0 0 1 13 0c0 5.2-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            <span data-config="endereco">Rua dos Ipês Amarelos, 845 · Vila Serena, Campinas/SP</span>
+          </li>
+          <li>
+            <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.6 3.5h2.6l1.6 4.2-2 1.3a11 11 0 0 0 6.2 6.2l1.3-2 4.2 1.6v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2z"/></svg>
+            <a href="tel:+5511900000000" data-telefone data-config="telefone">(11) 90000-0000</a>
+          </li>
+          <li>
+            <svg class="icone" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+            <span data-config="horario">Seg. a sex., das 9h às 18h · Sáb., das 9h às 13h</span>
+          </li>
+        </ul>
+      </div>
+
+      <nav aria-label="Rodapé">
+        <h2 class="rodape__titulo">Navegue</h2>
+        <ul class="rodape__lista">
+          <li><a href="index.html?finalidade=venda#resultados">Imóveis à venda</a></li>
+          <li><a href="index.html?finalidade=aluguel#resultados">Imóveis para alugar</a></li>
+          <li><a href="index.html?favoritos=1#resultados">Meus favoritos</a></li>
+          <li><a href="#anuncie">Anuncie seu imóvel</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="container rodape__base">
+      <p>© <span data-ano>2026</span> <span data-config="nome">Morada Nova Imóveis</span> · <span data-config="creci">CRECI 00000-J</span></p>
+      <p>Projeto fictício para portfólio. Fotos meramente ilustrativas.</p>
+    </div>
+  </footer>
+
+  <div class="aviso" id="aviso" role="status"></div>
+</body>
+</html>
