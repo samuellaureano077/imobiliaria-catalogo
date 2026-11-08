@@ -4,8 +4,6 @@ Site de imobiliária com catálogo filtrável, página de detalhes, favoritos, s
 
 ![Preview](preview.png)
 
-> Tire um print da página inicial aberta no navegador e salve na raiz do projeto com o nome `preview.png` para a imagem aparecer aqui.
-
 A Morada Nova é uma imobiliária fictícia, criada para portfólio. Nomes, endereços, telefone e CRECI são de exemplo, e as fotos são imagens de exemplo do [Unsplash](https://unsplash.com), de uso gratuito ([licença](https://unsplash.com/license)).
 
 ---
